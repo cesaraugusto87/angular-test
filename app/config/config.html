@@ -1,0 +1,26 @@
+<h1 align="center">Configurar Origen de Datos</h1>
+<div class="container">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="localOrigin">Origen Actual</label>
+            <p>{{currentUrl}}</p>
+        </div>
+            <div class="form-group col-md-12">
+                <label for="localOrigin">Origen Local</label>
+                <input type="radio" ng-model="originType" id="localOrigin" value="local" name="localOrigin">
+                <label for="remoteOrigin">Origen Remoto</label>
+                <input type="radio" ng-model="originType" id="remoteOrigin" value="remote" name="remoteOrigin">
+                <button ng-click="setLocal()" ng-show="originType == 'local'" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="input-group" id="url">
+                    <input type="text" ng-model="url" class="form-control" placeholder="Url Remota" ng-disabled="originType == 'local'" />
+                    <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+                            <button ng-click="setUrl()" ng-disabled="originType == 'local'" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>

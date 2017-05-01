@@ -1,0 +1,132 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+circle.white-loading{
+  stroke: white !important;
+}
+
+div.loading-app{
+  z-index: 99999999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: #FF6747;
+}
+
+.colorBackground {
+    color: white;
+  background-color: #FF6747;
+}
+
+.best_seller{
+  color: #FF6747;
+}
+.available{
+  color: #4AA02C;
+}
+.notavailable{
+  color: red;
+}
+
+
+.colorPrice {
+  color: #FF6747;
+}
+.align-vertical{
+  position: relative;
+  top: 50%;
+  transform: translateY(-35%);
+}
+
+svg#main-loading circle {
+  fill: none;
+  stroke: #355989;
+  stroke-linecap: round;
+  stroke-width: 7;
+  -webkit-animation: circley 8s ease infinite, rotaty 2.2s linear infinite;
+  -moz-animation: circley 8s ease infinite, rotaty 2.2s linear infinite;
+  transform-origin: center center;
+}
+
+svg#main-loading circle.colored {
+  -webkit-animation: circley 8s ease infinite, rotaty 2.2s linear infinite, colored 5.3333s ease infinite;
+  -moz-animation: circley 8s ease infinite, rotaty 2.2s linear infinite, colored 5.3333s ease infinite;
+}
+
+svg#main-loading circle.colored.slow-as-fuck {
+  -webkit-animation: circley 216s ease infinite, rotaty 59.4s linear infinite, colored 144s ease infinite;
+  -moz-animation: circley 216s ease infinite, rotaty 59.4s linear infinite, colored 144s ease infinite;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 60px 0 20px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.dropdown.dropdown-lg .dropdown-menu {
+  margin-top: -1px;
+  padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+  display: flex !important;
+}
+.btn-group .btn {
+  border-radius: 0;
+  margin-left: -1px;
+}
+.btn-group .btn:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+.form-group .form-control:last-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  #search {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .dropdown.dropdown-lg {
+    position: static !important;
+  }
+  .dropdown.dropdown-lg .dropdown-menu {
+    min-width: 500px;
+  }
+  #url {
+    width: 500px;
+  }
+}

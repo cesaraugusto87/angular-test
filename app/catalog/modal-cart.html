@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h3>{{'Tu carrito de compras'}} <small></small></h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div >
+            <table>
+                <tr ng-repeat="item in products ">
+                    <td class="col-lg-2"><img class="img-circle" ng-src={{item.img}} alt="{{item.name}}" width="50%"></td>
+                    <td class="col-lg-2"><strong>{{item.name}}</strong></td>
+                    <td class="col-lg-2">{{item.price | currency}}</td>
+                    <td class="col-lg-2">{{'Cantidad : '+item.quantity }}</td>
+                    <td class="col-lg-2"><a class="btn btn-danger" ng-click="delete(item.id)" role="button">Borrar</a></td>
+                </tr>
+            </table>
+
+          <!--  <div class="col-lg-12">
+
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>-->
+        </div>
+        <div class="col-lg-12 text-center" ng-if="products.length == 0">
+            <img  src="../images/emptyCart.svg">
+        <p >No hay Productos en su carrito.</p>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <p><a class="btn colorBackground" ng-if="products.length > 0" ng-click="buy()" role="button">Comprar</a>
+        <a class="btn btn-danger" ng-click="close()" role="button">Cerrar</a></p>
+</div>

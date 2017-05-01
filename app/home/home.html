@@ -1,0 +1,85 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner " role="listbox">
+        <div class="item active">
+            <img src="../images/carrousel-1.png" alt="1">
+        </div>
+
+        <div class="item">
+            <img src="../images/carrousel-2.jpg" alt="2">
+        </div>
+
+        <div class="item">
+            <img src="../images/carrousel-3.jpg" alt="3">
+        </div>
+
+        <div class="item">
+            <img src="../images/carrousel-4.png" alt="Flower">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <div class="input-group" id="search">
+                    <input type="text" ng-model="search.name" class="form-control" placeholder="Buscar Productos" />
+                    <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="filter">Filtrar Por</label>
+                <select ng-click="change()" ng-model="userFilter" id="filter" class="form-control">
+                    <option value="all" selected>Todo</option>
+                    <option value="available">Disponibles</option>
+                    <option value="notAvailable">Agotados</option>
+                    <option value="best_seller">Mas Vendidos</option>
+                    <option value="upper3">Precio mayor a 30.000</option>
+                    <option value="lower1">Precio menor a 10.000</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="order">Ordenar Por</label>
+                <select ng-click="change()" ng-model="userOrder" id="order" class="form-control">
+                    <option value="none" selected>--Seleccionar--</option>
+                    <option value="name">Nombre</option>
+                    <option value="upperPrice">Mayor Precio</option>
+                    <option value="lowerPrice">Menor Precio</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-repeat="item in productFound = (products | filter:{available: Filter.available, best_seller: Filter.best_seller} | filter: search | orderBy: Order )">
+    <div class="col-lg-4">
+        <img class="img-circle" ng-src={{item.img}} alt="{{item.name}}" width="140" height="140">
+        <h3 class="colorPrice">{{item.price | currency}}</h3>
+        <p>{{item.name}}</p>
+        <p><a class="btn colorBackground" ng-if="item.available" ng-click="addtoCart(item)" role="button">Agregar al Carrito</a>
+            <a class="btn btn-default" ng-click="showDetails(item.id)" role="button">Detalles</a></p>
+    </div>
+</div>

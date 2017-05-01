@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rappi Web Shopping</title>
+  <meta name="description" content="Shopping Web Site">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/bootstrap-sidebar/dist/css/sidebar.css">
+  <link rel="stylesheet" href="bower_components/bootstrap-sidebar/style.css">
+  <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+
+
+
+</head>
+<body ng-app="rappiTest" >
+
+<div class="loading-app" align="center">
+  <img src="images/white_logo.png" />
+  <svg id="main-loading" class="align-vertical" width="250" height="250" style="margin: 0 auto;">
+    <circle class="colored white-loading" cx="100" cy="100" r="40"> </circle>
+  </svg>
+</div>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!--  <div ng-include="'components/navbar/navbar.html'"></div>-->
+      <div ng-include="'components/sidebar/sidebar.html'"></div>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="main col-md-9 col-md-offset-3">
+        <div class="page-header">
+          <!-- Main content -->
+          <section class="content">
+
+            <div ng-view ></div>
+
+          </section><!-- /.content -->
+        </div>
+      </div>
+    </div><!-- /.content-wrapper -->
+    <!--<div ng-include="'components/footer/footer.html'"></div>-->
+  </div>
+</div>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/angular-loader/angular-loader.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/bootstrap-sidebar/dist/js/sidebar.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
+<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<script src="bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+<script src="app.js"></script>
+<script src="home/home.js"></script>
+<script src="home/home.controller.js"></script>
+<script src="catalog/catalog.js"></script>
+<script src="catalog/catalog.controller.js"></script>
+<script src="contact/contact.js"></script>
+<script src="contact/contact.controller.js"></script>
+<script src="config/config.js"></script>
+<script src="config/config.controller.js"></script>
+
+<script src="components/sidebar/sidebar.controller.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
+<script>
+  $(window).on('load',function() {
+    $("div.loading-app").fadeOut("slow");
+  });
+</script>
+</body>
+</html>

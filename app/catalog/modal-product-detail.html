@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3>{{'Detalles del Producto '}} - <small>{{ item.name}}</small></h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-6  text-center pagination">
+            <img class="img-thumbnail" ng-src={{item.img}} alt="{{item.name}}" >
+            <h3 class="colorPrice"><strong>{{item.price | currency}}</strong></h3>
+        </div>
+        <div class="col-xs-6">
+            <h2>{{item.name}}</h2>
+            <p>{{item.description}}</p>
+            <p ng-class="{available:item.available, notavailable:!item.available}">{{item.available? 'Disponible':'Agotado'}}</p>
+            <p class="best_seller">{{item.best_seller? 'Producto Lider en Ventas': ''}}</p>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <a class="btn colorBackground" ng-if="item.available" ng-click="addtoCart(item)" role="button">Agregar al Carrito</a>
+    <a class="btn btn-danger" ng-click="close()" role="button">Cerrar</a>
+</div>

@@ -1,0 +1,28 @@
+{
+  "name": "rappi-test",
+  "description": "Rappi WebApp",
+  "version": "0.0.1",
+  "homepage": "https://cesar-principal.ddns.me",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-loader": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "html5-boilerplate": "^5.3.0",
+    "ui.bootstrap": "^2.2.0",
+    "angular-animate": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.2.0",
+    "font-awesome": "^4.6.3",
+    "bootstrap-sidebar": "^0.2.2",
+    "angular-resource": "^1.5.8",
+    "lodash": "^4.16.4",
+    "ng-lodash": "^0.5.0",
+    "sweetalert": "^1.1.3",
+    "ngSweetAlert": "angular-sweetalert#^1.1.1",
+    "angular-cookies": "^1.5.8"
+  }
+}
